@@ -13,8 +13,31 @@ let comp = ["Green", "Yellow green", "Yellow",
   "Red", "Red violet", "Violet",
   "Blue violet", "Blue", "Blue green"]
 
+const compColors = new Map([
+  ["red", {
+            comp: "Green",
+            triadique: ["Blue", "Yellow"],
+            tetra : [] // TODO zouille
+          }],
+  ["red violet", "Yellow green"],
+  ["violet", "Yellow"],
+  ["blue violet", "Yellow orange"],
+  ["blue", "Orange"],
+  ["blue green", "Red orange"],
+  ["green", "Red"],
+  ["yellow green", "Red violet"],
+  ["yellow", "Violet"],
+  ["yellow orange", "Blue violet"],
+  ["orange", "Blue"],
+  ["red orange", "Blue green"]
+]);
+
 function complementary() {
-  switch (input.value.toLowerCase()) {
+  let compColor = compColors.get(input.value.toLowerCase());
+  msg.innerText = "La couleur complémentaire de " + input.value.toLowerCase() + " est " + compColor.comp;
+  //document.querySelector("#msg").innerText = "La couleur complémentaire de " + input.value.toLowerCase() + " est " + compColor;
+
+  /*switch (input.value.toLowerCase()) {
     case clrs[0]: msg.innerText = "La couleur complémentaire de " + clrs[0].charAt(0).toUpperCase() + clrs[0].substring(1) + " est " + comp[0];
       break;
     case clrs[1]: msg.innerText = "La couleur complémentaire de " + clrs[1].charAt(0).toUpperCase() + clrs[1].substring(1) + " est " + comp[1];
@@ -40,7 +63,7 @@ function complementary() {
     case clrs[11]: msg.innerText = "La couleur complémentaire de " + clrs[11].charAt(0).toUpperCase() + clrs[11].substring(1) + " est " + comp[11];
       break;
     default: msg.innerText = "Ceci n'est pas une couleur valide";
-  }
+  }*/
 } //msg.innerText marche alors que j'ai pas créé de variable msg ?
 
 input.addEventListener("keydown", function (e) {
