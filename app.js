@@ -13,25 +13,6 @@ let comp = ["Green", "Yellow green", "Yellow",
   "Red", "Red violet", "Violet",
   "Blue violet", "Blue", "Blue green"]
 
-const compColors = new Map([
-  ["red", {
-            comp: "Green",
-            triadique: ["Blue", "Yellow"],
-            tetra : [] // TODO zouille
-          }],
-  ["red violet", "Yellow green"],
-  ["violet", "Yellow"],
-  ["blue violet", "Yellow orange"],
-  ["blue", "Orange"],
-  ["blue green", "Red orange"],
-  ["green", "Red"],
-  ["yellow green", "Red violet"],
-  ["yellow", "Violet"],
-  ["yellow orange", "Blue violet"],
-  ["orange", "Blue"],
-  ["red orange", "Blue green"]
-]);
-
 function complementary() {
   let compColor = compColors.get(input.value.toLowerCase());
   msg.innerText = "La couleur complémentaire de " + input.value.toLowerCase() + " est " + compColor.comp;
@@ -63,7 +44,7 @@ function complementary() {
     case clrs[11]: msg.innerText = "La couleur complémentaire de " + clrs[11].charAt(0).toUpperCase() + clrs[11].substring(1) + " est " + comp[11];
       break;
     default: msg.innerText = "Ceci n'est pas une couleur valide";
-  }*/
+  }
 } //msg.innerText marche alors que j'ai pas créé de variable msg ?
 
 input.addEventListener("keydown", function (e) {
@@ -87,58 +68,58 @@ const colors = new Map([
     tetra : []}
   ],
   ["red violet", {
-    comp: "Green",
-    tri: ["Blue", "Yellow"],
+    comp: "Yellow green",
+    tri: ["Blue green", " Yellow orange"],
     tetra : []}
   ],
   ["violet", {
-    comp: "Green",
-    tri: ["Blue", "Yellow"],
+    comp: "Yellow",
+    tri: ["Green", " Orange"],
     tetra : []}
   ],
   ["blue violet", {
-    comp: "Green",
-    tri: ["Blue", "Yellow"],
+    comp: "Yellow orange",
+    tri: ["Yellow green", " Red orange"],
     tetra : []}
   ],
   ["blue", {
-    comp: "Green",
-    tri: ["Blue", "Yellow"],
+    comp: "Orange",
+    tri: ["Yellow", " Red"],
     tetra : []}
   ],
   ["blue green", {
-    comp: "Green",
-    tri: ["Blue", "Yellow"],
+    comp: "Red orange",
+    tri: ["Yellow orange", " Red violet"],
     tetra : []}
   ],
   ["green", {
-    comp: "Green",
-    tri: ["Blue", "Yellow"],
+    comp: "Red",
+    tri: ["Orange", " Violet"],
     tetra : []}
   ],
   ["yellow green", {
-    comp: "Green",
-    tri: ["Blue", "Yellow"],
+    comp: "Red violet",
+    tri: ["Red orange", " Blue violet"],
     tetra : []}
   ],
   ["yellow", {
-    comp: "Green",
-    tri: ["Blue", "Yellow"],
+    comp: "Violet",
+    tri: ["Red", " Blue"],
     tetra : []}
   ],
   ["yellow orange", {
-    comp: "Green",
-    tri: ["Blue", "Yellow"],
+    comp: "Blue violet",
+    tri: ["Red viloet", " Blue green"],
     tetra : []}
   ],
   ["orange", {
-    comp: "Green",
-    tri: ["Blue", "Yellow"],
+    comp: "Blue",
+    tri: ["Violet", " Green"],
     tetra : []}
   ],
   ["red orange", {
-    comp: "Green",
-    tri: ["Blue", "Yellow"],
+    comp: "Blue green",
+    tri: ["Blue violet", " Yellow green"],
     tetra : []}
   ],
 ]);
