@@ -1,7 +1,7 @@
-const input = document.querySelector("#input").toLowerCase();
-const input2 = document.querySelector("#input2").toLowerCase();
-const msg = document.querySelector("#msg").toLowerCase();
-const msg2 = document.querySelector("#msg2").toLowerCase();
+const input = document.querySelector("#input");
+const input2 = document.querySelector("#input2");
+const msg = document.querySelector("#msg");
+const msg2 = document.querySelector("#msg2");
 
 const colors = new Map([
   ["red", {
@@ -66,14 +66,16 @@ const colors = new Map([
   ],
 ]);
 
+// rajouter un if dans les fonctions pour les cas où l'utilisaeur tape une saisie invalide
+
 function complementary() {
-  let color = colors.get(input.value);
-  msg.innerText = "La couleur complémentaire de " + color.charAt(0).toUpperCase() + color.substring(1) + " est " + color.comp;
+  let color = colors.get(input.value.toLowerCase());
+  msg.innerText = "La couleur complémentaire de " + input.value.toLowerCase() + " est " + color.comp;
 }
 
 function triadic() {
   let color = colors.get(input2.value.toLowerCase());
-  msg2.innerText = "Les couleurs triadiques de " + color.charAt(0).toUpperCase() + color.substring(1) " sont : " + color.tri;
+  msg2.innerText = "Les couleurs triadiques de " + input2.value.toLowerCase() + " sont : " + color.tri;
 }
 
 input.addEventListener("keydown", function (e) {
